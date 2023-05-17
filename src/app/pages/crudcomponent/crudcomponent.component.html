@@ -1,0 +1,30 @@
+<header-component></header-component>
+
+<form>
+    <div class="form">
+        <label for="username"></label>
+        <input type="text" placeholder="Usuario">
+    
+    </div>
+    <div class="form">
+        <label for="correo"></label>
+        <input type="email" placeholder="Correo Electronico">
+    </div>
+    <div class="form">
+        <label for="password"></label>
+        <input type="password" placeholder="Contraseña">
+    </div>
+    <button type="button" onclick="">Ingresar</button>
+</form>
+<br>
+<table border="1" *ngIf = 'mostrarRegistros(); else sinRegistros'>
+    <tr>
+        <td>Usuario</td><td>Correo</td><td>Password</td>
+    </tr>
+    <tr *ngFor = 'let usuario of usuarios'>
+        <td>{{usuario.usuario}}</td>
+        <td>{{usuario.correo}}</td>
+        <td>{{usuario.password}}</td>
+    </tr>
+</table>
+<ng-template #sinRegistros>No se han registrado usuarios.</ng-template>
